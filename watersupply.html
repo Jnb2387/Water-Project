@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title> H2O Safe </title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js"></script> 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" type="text/css" />
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="newstyle.css" type="text/css" />
+
+	</head>
+	
+	<body class="horizontal-menu home">
+	  <div class="page-container row-fluid" >
+<!--Begin Navbar-->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		  	<!--side menu small screens-->
+			<div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">H<span class='nav2'>2</span>O Safe</a>
+		      <a class="navbar-brand" id="navcontam" href="#">Contaminants</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links<span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="https://www.epa.gov/learn-issues/learn-about-water">Learn about Water
+		            </a></li>
+		            <li><a href="https://www.epa.gov/your-drinking-water/basic-information-about-lead-drinking-water">Basic Information about Lead in Drinking Water</a></li>
+		            <li><a href="http://www.cdc.gov/nceh/lead/tips/water.htm">Toxic Substances Portal 
+		            </a></li>
+		            <li><a href="#">The Safe Drinking Water Act (SDWA)</a></li>
+		            <li><a href="#">Drinking Water Regulations Under Development or Review</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		     
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+<!--End Navbar-->
+<!--Controller	-->
+		<div class="fields">
+			<div ng-controller="firstController as myfirstCtrl">
+<!--submitZip()-->
+				<form ng-submit="myfirstCtrl.submitZip()">
+				    	<!--<img class="logos" src="http://www.surfrider-southbay.org/images/programs/know/know_your_h2o_logo.jpg"></img>-->
+				    	<img class="logos" src="http://i.imgur.com/rEDInCQ.png">
+<!--Input Zipcode(searchZip)-->
+				    <div class='inputbutton'>
+						<input type="text" ng-model="myfirstCtrl.searchZip" name="address" id="inputbox" placeholder="Please Enter A Zipcode" />
+					<br>
+					<br>
+					<div class="right">
+<!--Submit button-->
+						<button class="btn btn-success" type="submit" >Check My Water</button>
+				    </div>
+					</div>
+					<br style="clear-right" />
+				</form>
+			</div>
+		</div>
+		</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+/*responsive*/
+@media screen and (max-width: 500px) { 
+.logos{
+    top: -140px;
+    left: -30px;
+    }
+.inputbutton{
+    margin-top: 100px;
+    margin-left: -30px;
+}
+}
+.nav2{
+    font-size: smaller;
+}
+#navcontam{
+    font-size:15px;
+}
+body { 
+    background: url(http://www.jotem.nl/img/background_03.jpg) ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+.btnright{
+    margin-left:80px;
+}
+.logos{
+    position:relative;
+    display:block;
+    padding:20px;
+    margin-left: -120px;
+}
+.fields{
+    position: relative;
+/*    top:40%;*/
+/*    left: 40%;*/
+/*    margin: auto;*/
+/*}*/}
+form{
+    position:absolute;
+    left: 45%;
+    margin-top: 20vh;
+
+}
+#inputbox{
+    width:300px; 
+    height:40px;
+    margin-left: -80px;
+}
+
+
+
+
+
