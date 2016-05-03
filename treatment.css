@@ -1,0 +1,13 @@
+#headingTreatment{
+    text-align: center;
+}
+.treatmentprocessimg{
+    float:right;
+    position:absolute;
+}
+.treatmentList{
+    font-size: 22px;
+}
+.bold{
+    font-weight:700;
+}

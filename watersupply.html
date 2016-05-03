@@ -1,78 +1,49 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title> H2O Safe </title>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js"></script> 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" type="text/css" />
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-        <script type="text/javascript" src="script.js"></script>
-		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="newstyle.css" type="text/css" />
-
-	</head>
-	
-	<body class="horizontal-menu home">
-	  <div class="page-container row-fluid" >
-<!--Begin Navbar-->
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		  	<!--side menu small screens-->
-			<div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand" href="#">H<span class='nav2'>2</span>O Safe</a>
-		      <a class="navbar-brand" id="navcontam" href="#">Contaminants</a>
-		    </div>
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav">
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links<span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li><a href="https://www.epa.gov/learn-issues/learn-about-water">Learn about Water
-		            </a></li>
-		            <li><a href="https://www.epa.gov/your-drinking-water/basic-information-about-lead-drinking-water">Basic Information about Lead in Drinking Water</a></li>
-		            <li><a href="http://www.cdc.gov/nceh/lead/tips/water.htm">Toxic Substances Portal 
-		            </a></li>
-		            <li><a href="#">The Safe Drinking Water Act (SDWA)</a></li>
-		            <li><a href="#">Drinking Water Regulations Under Development or Review</a></li>
-		          </ul>
-		        </li>
-		      </ul>
-		     
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
-		</nav>
-<!--End Navbar-->
+<div class="wrapper">
 <!--Controller	-->
-		<div class="fields">
-			<div ng-controller="firstController as myfirstCtrl">
+	<div class="fields">
+		<div ng-controller="firstController as myfirstCtrl">
+<!--ng-view-->
+			
 <!--submitZip()-->
-				<form ng-submit="myfirstCtrl.submitZip()">
-				    	<!--<img class="logos" src="http://www.surfrider-southbay.org/images/programs/know/know_your_h2o_logo.jpg"></img>-->
-				    	<img class="logos" src="http://i.imgur.com/rEDInCQ.png">
+			<form ng-submit="myfirstCtrl.submitZip(myfirstCtrl.searchZip)">
+			    	<!--<img class="logos" src="http://www.surfrider-southbay.org/images/programs/know/know_your_h2o_logo.jpg"></img>-->
+			    	<img class="logos" src="http://i.imgur.com/rEDInCQ.png">
 <!--Input Zipcode(searchZip)-->
-				    <div class='inputbutton'>
-						<input type="text" ng-model="myfirstCtrl.searchZip" name="address" id="inputbox" placeholder="Please Enter A Zipcode" />
-					<br>
-					<br>
-					<div class="right">
+			    <div class='inputbutton'>
+					<input type="number" ng-model="myfirstCtrl.searchZip" name="address" id="inputbox" placeholder="Please Enter A Zipcode" />
+				<br>
+				<br>
+				<div class="right">
 <!--Submit button-->
-						<button class="btn btn-success" type="submit" >Check My Water</button>
-				    </div>
+
+					<button class="btn btn-success" >Check My Water</button>
+			    </div>
+				</div>
+				<br style="clear-right" />
+			</form>	
+<!--Modal-->
+				<!--<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">activate</button>-->
+					<div class="modal fade" id="modal-1">
+						<div class="modal-dialog">
+							<div class= "modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"></button>
+										<h3 class="modal-title" style="text-align:center;">Results For {{myfirstCtrl.results.name}}</h3>
+								</div>
+								<div class="modal-body">
+									<div class="box">Rating:<br>{{myfirstCtrl.results.rating}}</div>
+									<div>Violations Found: <span class="dropt" id ="violations">{{myfirstCtrl.results.violations}}<span style="width:300px;">Coliform bacteria are organisms that are present in the environment and in the feces of all warm-blooded animals and humans. Coliform bacteria will not likely cause illness. However, their presence in drinking water indicates that disease-causing organisms (pathogens) could be in the water system.</span> </div>
+									<div><a href="https://www.google.com/maps/place/City+of+Flint+Water+Plant/@43.0725924,-83.8935118,11z/data=!4m5!1m2!2m1!1sflint+michigan+water+treatment+plant!3m1!1s0x0000000000000000:0x857d53a923a46f7e" target="_blank">
+										<img style="width:550px;" class="thumbnail" ng-src='{{myfirstCtrl.results.imageofmap}}'</a></div>
+									<div><a ng-href='{{myfirstCtrl.results.linktomore}}'target="_blank">Link to County Treatment Plant</a></div>
+								</div>
+								<div class="modal-footer">
+									<a href="" class="btn btn-primary" data-dismiss="modal">Close</a>
+								</div>
+							</div>
+						</div>
 					</div>
-					<br style="clear-right" />
-				</form>
-			</div>
+<!--End Modal-->
 		</div>
-		</div>
-		</div>
-	</body>
-</html>
+	</div>
+</div>

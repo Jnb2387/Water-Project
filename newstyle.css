@@ -1,5 +1,5 @@
 /*responsive*/
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 600px) { 
 .logos{
     top: -140px;
     left: -30px;
@@ -7,6 +7,10 @@
 .inputbutton{
     margin-top: 100px;
     margin-left: -30px;
+}
+.thumbnail{
+    max-width:350px;
+    height:auto;
 }
 }
 .nav2{
@@ -16,6 +20,12 @@
     font-size:15px;
 }
 body { 
+    background: url(http://www.jotem.nl/img/background_03.jpg) ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+.wrapper{
     background: url(http://www.jotem.nl/img/background_03.jpg) ;
     background-repeat: no-repeat;
     background-size:cover;
@@ -47,8 +57,72 @@ form{
     height:40px;
     margin-left: -80px;
 }
-
-
-
-
+.box{
+   border: 3px solid #3172A7;
+   float:right;
+   padding:15px;
+   margin-top: -20px;
+}
+#violations{
+    color:red;
+}
+.modal-body{
+    font-size: 18px;
+}
+span.dropt {
+    border-bottom: thin dotted; 
+}
+span.dropt:hover {
+    text-decoration: none; 
+    background: #ffffff; 
+    z-index: 6; 
+}
+span.dropt span {
+    position: absolute; 
+    left: -9999px;
+    margin: 20px 0 0 0px; 
+    padding: 3px 3px 3px 3px;
+    border-style:solid; 
+    border-color:black; 
+    border-width:1px; 
+    z-index: 6;
+    
+}
+span.dropt:hover span {
+    left: 2%; 
+    background: #ffffff;
+} 
+span.dropt span {
+    position: absolute; 
+    left: -9999px;
+    margin: 4px 0 0 0px;
+    padding: 3px 3px 3px 3px; 
+    border-style:solid; 
+    border-color:black; border-width:1px;
+    border-radius:10px;
+}
+span.dropt:hover span {
+    margin: 20px 0 0 170px; 
+    background: #ffffff; 
+    z-index:6;
+} 
+/*.thumbnail:hover {*/
+/*    position:relative;*/
+/*    top:-25px;*/
+/*    left:-225px;*/
+/*    width:700px!important;*/
+/*    height:600px;*/
+/*    display:block;*/
+/*    z-index:999;*/
+/*}*/
+.thumbnail{
+    margin-top: 100px;
+}
+.outerDiv {
+    width: 200px;
+    height: 200px;
+    text-align:center;
+    background: yellow;
+    position:relative;
+}
 

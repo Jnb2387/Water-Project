@@ -1,22 +1,20 @@
 (function () {
-  angular.module('myRouterApp', ['ui.router','controllers'])
+  angular.module('myApp')
     .config(routerConfig)
-
-    function routerConfig($stateProvider,$urlRouterProvider){
-
-      $stateProvider
-        .state('home',{
-          url: '/',
-          templateUrl: 'home.html',
-          controller: 'firstController as myfirstCtrl'
-        })
-        .state('login',{
-          url: '/login',
-          templateUrl: 'results.html'
-        })
-
-        $urlRouterProvider.otherwise('/')
-
-    }
-
+            function routerConfig($stateProvider,$urlRouterProvider){
+                $stateProvider
+                .state('watersupply',{
+                    url:'/',
+                    templateUrl:'watersupply.html'
+                })
+                .state('results',{
+                    url:'/contaminants',
+                    templateUrl:'results.html'
+                })
+                .state('treatment',{
+                    url:'/treatment',
+                    templateUrl:'treatment.html'
+                })
+                $urlRouterProvider.otherwise('/')
+            }
 }())
