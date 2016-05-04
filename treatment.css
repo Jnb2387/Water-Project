@@ -1,13 +1,45 @@
 #headingTreatment{
     text-align: center;
 }
-.treatmentprocessimg{
-    float:right;
-    position:absolute;
+#treatmentprocessimg{
+    /*float:right;*/
+    /*left:400px;*/
+    /*height:500px;*/
+    position:relative;
+    opacity: 1;
 }
 .treatmentList{
     font-size: 22px;
 }
 .bold{
     font-weight:700;
+}
+#contentwithimage{
+    font-size: 18px;
+     position:relative;
+}
+p{
+    padding-left: 20px;
+}
+#treatmentWrapperimg{
+    background:url("http://il2.picdn.net/shutterstock/videos/15137200/thumb/1.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: 0.7;
+}
+#wrapperContent{
+    opacity: 1;
+    
+    font-size: 18px;
+    line-height: 30px;
+    text-shadow: 2px 2px white;
+    color:black;
+    font-family: 'Oswald', sans-serif;
+   
+}
+.show{
+    border:3px red solid;
+}
+.navbar{
+    margin:0px;
 }

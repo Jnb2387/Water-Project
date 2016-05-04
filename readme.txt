@@ -1,0 +1,2 @@
+This is a Simple web app that uses javascript and angular to show a user the water quality for the zipcode that was input.
+also providing users with information on water treatment information, contaminants and links to find treatment plant and CCR.

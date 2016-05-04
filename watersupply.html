@@ -32,10 +32,14 @@
 								</div>
 								<div class="modal-body">
 									<div class="box">Rating:<br>{{myfirstCtrl.results.rating}}</div>
-									<div>Violations Found: <span class="dropt" id ="violations">{{myfirstCtrl.results.violations}}<span style="width:300px;">Coliform bacteria are organisms that are present in the environment and in the feces of all warm-blooded animals and humans. Coliform bacteria will not likely cause illness. However, their presence in drinking water indicates that disease-causing organisms (pathogens) could be in the water system.</span> </div>
+									<div><span id="modalinfo">Violations Found:</span> <span style="color:red;">{{myfirstCtrl.results.violations}}</span></div>
+									<br>
+									<div><span id="modalinfo">Population Impacted:</span>{{myfirstCtrl.results.population}}</div>
+									<br>
+									<div><span id="modalinfo">{{myfirstCtrl.results.name}} Water Comes From:</span><br> {{myfirstCtrl.results.where}}</div>
 									<div><a href="https://www.google.com/maps/place/City+of+Flint+Water+Plant/@43.0725924,-83.8935118,11z/data=!4m5!1m2!2m1!1sflint+michigan+water+treatment+plant!3m1!1s0x0000000000000000:0x857d53a923a46f7e" target="_blank">
 										<img style="width:550px;" class="thumbnail" ng-src='{{myfirstCtrl.results.imageofmap}}'</a></div>
-									<div><a ng-href='{{myfirstCtrl.results.linktomore}}'target="_blank">Link to County Treatment Plant</a></div>
+									<div><a ng-href='{{myfirstCtrl.results.linktomore}}'target="_blank">Full Water Quality Report</a></div>
 								</div>
 								<div class="modal-footer">
 									<a href="" class="btn btn-primary" data-dismiss="modal">Close</a>
