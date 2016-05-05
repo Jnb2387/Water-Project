@@ -2,26 +2,28 @@
 <!--Controller	-->
 	<div class="fields">
 		<div ng-controller="firstController as myfirstCtrl">
-<!--ng-view-->
-			
-<!--submitZip()-->
+<!----------------------------------------submitZip()------------------------------------------------------------------------------>
 			<form ng-submit="myfirstCtrl.submitZip(myfirstCtrl.searchZip)">
 			    	<!--<img class="logos" src="http://www.surfrider-southbay.org/images/programs/know/know_your_h2o_logo.jpg"></img>-->
 			    	<img class="logos" src="http://i.imgur.com/rEDInCQ.png">
-<!--Input Zipcode(searchZip)-->
+<!----------------------------------------Input Zipcode(searchZip)-----------------------------------v----->
 			    <div class='inputbutton'>
 					<input type="number" ng-model="myfirstCtrl.searchZip" name="address" id="inputbox" placeholder="Please Enter A Zipcode" />
 				<br>
 				<br>
 				<div class="right">
-<!--Submit button-->
-
-					<button class="btn btn-success" >Check My Water</button>
-			    </div>
+<!----------------------------------------Submit button for knowledge modal------------------------------------------------------------------------------>
+					<div class='row' id= "btnleft">
+                    	<button type="button" class="btn btn-warning" style="display:inline-block;" data-toggle="modal" data-target="#myModal">
+                     		Test Your Knowledge
+                    	</button>
+<!----------------------------------------Submit button for water check------------------------------------------------------------------------------>			    	
+						<button class="btn btn-success" style="display:inline-block;">Check My Water</button>
+			    	</div>
 				</div>
 				<br style="clear-right" />
 			</form>	
-<!--Modal-->
+<!----------------------------------------Modal------------------------------------------------------------------------------>
 				<!--<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">activate</button>-->
 					<div class="modal fade" id="modal-1">
 						<div class="modal-dialog">
@@ -32,7 +34,7 @@
 								</div>
 								<div class="modal-body">
 									<div class="box">Rating:<br>{{myfirstCtrl.results.rating}}</div>
-									<div><span id="modalinfo">Violations Found:</span> <span style="color:red;">{{myfirstCtrl.results.violations}}</span></div>
+									<div><span id="modalinfo">Violations Found:</span> <span style="color:red;"><a href="#contaminants">{{myfirstCtrl.results.violations}}</a></span></div>
 									<br>
 									<div><span id="modalinfo">Population Impacted:</span>{{myfirstCtrl.results.population}}</div>
 									<br>
@@ -47,7 +49,38 @@
 							</div>
 						</div>
 					</div>
-<!--End Modal-->
+<!----------------------------------------End Modal------------------------------------------------------------------------------>
+<!-----------------------------------------Check your knowledge modal---------------------------------------------------------------------------------->
+			    <!--<div class='knowledgebtn'>-->
+       <!--             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">-->
+       <!--               Test Your Knowledge-->
+       <!--             </button>-->
+			    <!--</div>-->
+				<form ng-submit="myfirstCtrl.submitQuiz(myfirstCtrl.inputQuiz)">
+					<div class="modal fade" id="myModal">
+						<div class="modal-dialog">
+							<div class= "modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"></button>
+										<h3 class="modal-title" style="text-align:center;">Knowledge</h3>
+								</div>
+								<div class="modal-body">
+								    <div><p><strong>The Consumption of Bottled Water has Risen Significantly Over the Last Few Decades?</strong></p>
+								        <div style="text-align:center;">
+								            <input id="quizinput" ng-model='myfirstCtrl.inputQuiz' type="text" placeholder="True/false"></div>
+								        <button type="submit">Check Answer</button>
+								    </div>
+								    <div ng-show="myfirstCtrl.showAnswer">
+								        {{myfirstCtrl.correct}}
+								    </div>
+								</div>
+								<div class="modal-footer">
+									<a href="" class="btn btn-primary" data-dismiss="modal">Close</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
 		</div>
 	</div>
 </div>

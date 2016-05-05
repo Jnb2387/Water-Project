@@ -2,25 +2,12 @@ angular.module('myApp',['ui.router'])
     .controller('firstController', ['factory',firstControllerFunc])
         .controller('secondController',['factory',secondControllerFunc])
             .factory('factory',[factory])
-// Routing
-            // .config(routerConfig)
-            // function routerConfig($stateProvider,$urlRouterProvider){
-            //     $stateProvider
-            //     .state('watersupply',{
-            //         url:'/',
-            //         templateUrl:'watersupply.html',
-            //         controller:'firstController as myfirstCtrl'
-            //     })
-            //     .state('results',{
-            //         url:'/results',
-            //         templateUrl:'results.html'
-            //     })
-            //     $urlRouterProvider.otherwise('/')
-            // }
-//First Controller
+//--------------------------------------First Controller--------------------------------------
         function firstControllerFunc(factory){
             var myfirstCtrl= this;
             myfirstCtrl.area= factory.area
+            myfirstCtrl.correct= factory.correct
+            myfirstCtrl.something=  factory.something
             myfirstCtrl.results =''
             myfirstCtrl.submitZip = function(searchZip){
                 for(var i = 0;i < myfirstCtrl.area.length; i++){
@@ -32,12 +19,38 @@ angular.module('myApp',['ui.router'])
                 }
                 alert("Zip Not Found")
             }
+            myfirstCtrl.showAnswer=false
+            myfirstCtrl.submitQuiz = function(inputQuiz) {
+                for(var j = 0;j < myfirstCtrl.area.length; j++){
+            // myfirstCtrl.inputQuiz = myfirstCtrl.inputQuiz.toUpperCase()
+                    if(inputQuiz == myfirstCtrl.something){
+                        myfirstCtrl.answer = myfirstCtrl.area[j]
+                         return myfirstCtrl.showAnswer = true
+                    }
+                }
+                         alert("no")
+            }
         }
-//Second Controller
+//--------------------------------------Second Controller--------------------------------------
         function secondControllerFunc(factory){
             var mysecondCtrl= this;
+            // mysecondCtrl.quiz=''
+            //   var totalQuestions = 2;
+            // mysecondCtrl.submitQuiz = function(inputQuiz) {
+            //     for(var j = 0;j < mysecondCtrl.area.length; j++){
+            //         if(inputQuiz=== mysecondCtrl.area[j].something){
+            //         // if(inputQuiz == totalQuestions){
+            //             //  myfirstCtrl.quiz = myfirstCtrl.area[j]
+            //           alert("correct")
+            //         }
+            //     } console.log(4)
+            //   var correctAnswers = 0;
+            //   var alertText;
+            //   var i;
+            // }
         }
-//Factory Area 
+        
+//--------------------------------------Factory Area-------------------------------------- 
         function factory(){
             var area = [
                 {
@@ -90,9 +103,13 @@ angular.module('myApp',['ui.router'])
                  imageofmap:"https://www.google.com/maps/vt/data=RfCSdfNZ0LFPrHSm0ublXdzhdrDFhtmHhN1u-gM,SBSQ8AgZ3JfLLw49s7GsZ-xHDTPwtbBVQHS1HKwzeisAKh0nrtC9aSIpPpc82ABvbq5RjVGOia0Y7x6Aj5CETfxSb76E8SvbIQdTiJk5xdiaL1LCnB16co3ZMi4OFx2JwGfLaDFouTsXSZxzQYfMZ2YS77qHv36xUH7pnIb2huW_Kx5l4KOy2-6lOP020B9BJ-06X99sZvtD95Z2g1ev8iinN9P-ulQxjDpXB0_c_CfRwJDi6ZT1a6XKJ8zTfybQCw43Vw-HXgEpiqa98wq3l-bYKSRVtUIGMoXkcU5xsIV4Bn9g1byTCD6Rr2d-zKs6e22Bft_FELQBOTJ6mAAtgbpmepwLTIItYPs_vaStuKFJz0W_Ok2Za3liWz13L5V9vVIp1ukeT4VKYCKUqo6zc1AwzJgABGwMIAwJHSv5j87g1SBPEP_7ZeJlBlLiAQj_LNrTtd-3QL-ottRfG1q6Uwns9fsRsWh7Qw3eVjuFDayoL-Y6XLqaccJk98lGNQMyY-MlX1gyoWT2Df9O3NQyiutPdqHp80Qasy9wFDdKy2ZwKnWMVkZaMWRz-kiSUqElDXcrPgIPNFmmXVPdVRGBqg37rcVrtbHr-O4dIEYZ_DgvhOiDcw7nY94eT06yyUi4C2Me6Dn1S3qzH7HBn5yDFeyF_q3uA9yGudqhPAprOGycYAWv391lj5PkMrTICL14Ea168C2wefg5tctwF8WtFCzktRVOpl0GBoCsrXt39ITjLyT4xXwiLJIJ9m6A3C5q9AO-ZmBMJs37yDCMdS-puZujQFk",
                  population:' 42,570 / 161,984', 
                 },
+                
             ]
             return {
-                area:area
+                area:area,
+
+                 something:"true",
+                 correct:"Awesome Job!\nSales of bottled water grew nearly 7 percent \n between 2011 and 2012, with consumption reaching a staggering 30.8 gallons per person.",
                 
             }
         }

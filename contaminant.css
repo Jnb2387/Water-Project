@@ -17,7 +17,40 @@ caption{
 #wrapper{
     background:url('https://www.photoshopgurus.com/forum/attachments/photoshop-newbies/46330d1402827697t-how-make-subtle-background-jpg');
     background-size: cover;
-    width:100%;
+    /*width:100%;*/
     font-family: 'Lato', sans-serif;
     font-size: 20px;
+    
+}
+/*===================================Trial===========================================*/
+
+#page-wrap		    { width: 500px; margin: 0 auto; }
+
+h1                  { margin: 25px 0; font: 14px Georgia, Serif; text-transform: uppercase; letter-spacing: 3px; }
+
+#quiz input {
+    vertical-align: middle;
+}
+
+#quiz ol {
+   margin: 0 0 10px 20px;
+}
+
+#quiz ol li {
+   margin: 0 0 20px 0;
+}
+
+#quiz ol li div {
+   padding: 4px 0;
+}
+
+#quiz h3 {
+   font-size: 17px; margin: 0 0 1px 0; color: #666;
+}
+
+#results {
+    font: 44px Georgia, Serif;
+}
+.navbar{
+    background-color:'';
 }

@@ -130,4 +130,12 @@ form{
 #modalinfo{
     font-weight: bold;
 }
-
+#quizinput{
+    text-align: center;
+}
+.quizP{
+    font-weight: bold;
+}
+#btnleft{
+    margin-left: -75px
+}
